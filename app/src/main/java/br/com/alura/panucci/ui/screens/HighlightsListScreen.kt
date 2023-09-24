@@ -24,7 +24,7 @@ fun HighlightsListScreen(
     title: String = "Destaques do dia",
     products: List<Product> = emptyList(),
     onOrderClick: () -> Unit = {},
-    onProductClick: () -> Unit = {}
+    onNavigateProductsDetails: (product: Product) -> Unit = {}
 ) {
     Column(
         modifier
@@ -51,7 +51,7 @@ fun HighlightsListScreen(
                 HighlightProductCard(
                     product = p,
                     Modifier.clickable {
-                        onProductClick()
+                        onNavigateProductsDetails(p)
                     },
                     onOrderClick = onOrderClick
                 )
